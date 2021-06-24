@@ -21,7 +21,7 @@ function styles(){
     .pipe(scss({outputStyle: 'compressed'}).on('error', scss.logError))
     .pipe(concat('style.min.css'))
     .pipe(sourcemaps.write())
-    .pipe(dest('./app/assets/styles'))
+    .pipe(dest('./app/dist/styles'))
     .pipe(browserSync.stream())
 }
 function scripts(){
@@ -34,7 +34,7 @@ function scripts(){
   .pipe(concat('main.min.js'))
   .pipe(uglify())
   .pipe(sourcemaps.write('.'))
-  .pipe(dest('./app/assets/js'))
+  .pipe(dest('./app/dist/js'))
   .pipe(browserSync.stream())
 }
 
@@ -53,7 +53,7 @@ function images(){
         })
       ]
     ))
-    .pipe(dest('dist/assets/images'))
+    .pipe(dest('./app/dist/images'))
 }
 
 function watching(){
@@ -75,8 +75,8 @@ function cleanDist(){
 
 function build(){
   return src([
-    'app/assets/styles/style.min.css',
-    'app/assets/js/main.min.js',
+    // 'app/assets/styles/style.min.css',
+    // 'app/assets/js/main.min.js',
     'app/assets/fonts/**/*',
     'app/*.html',
   ], {base: 'app'})
