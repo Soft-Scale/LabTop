@@ -21,12 +21,13 @@ function styles(){
     .pipe(scss({outputStyle: 'compressed'}).on('error', scss.logError))
     .pipe(concat('style.min.css'))
     .pipe(sourcemaps.write())
-    .pipe(dest('./app/dist/styles'))
+    .pipe(dest('./app/assets/styles'))
     .pipe(browserSync.stream())
 }
 function scripts(){
   return src([
     // 'node_modules/jquery/dist/jquery.js',
+    './app/assets/scripts/wow.js',
     './app/assets/scripts/index.js'
   ])
   .pipe(sourcemaps.init())
@@ -34,7 +35,7 @@ function scripts(){
   .pipe(concat('main.min.js'))
   .pipe(uglify())
   .pipe(sourcemaps.write('.'))
-  .pipe(dest('./app/dist/js'))
+  .pipe(dest('./app/assets/js'))
   .pipe(browserSync.stream())
 }
 
@@ -53,7 +54,7 @@ function images(){
         })
       ]
     ))
-    .pipe(dest('./app/dist/images'))
+    .pipe(dest('./app/assets/images'))
 }
 
 function watching(){
@@ -75,9 +76,10 @@ function cleanDist(){
 
 function build(){
   return src([
-    // 'app/assets/styles/style.min.css',
-    // 'app/assets/js/main.min.js',
+    'app/assets/styles/style.min.css',
+    'app/assets/js/main.min.js',
     'app/assets/fonts/**/*',
+    'app/assets/images/**/*',
     'app/*.html',
   ], {base: 'app'})
   .pipe(dest('dist'))
