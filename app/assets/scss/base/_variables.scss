@@ -1,13 +1,19 @@
-$base-color: #74a774;
-$border-dark: rgba($base-color, 0.88);
-.btn{
-  background: $base-color;
-  border: none;
-  color: #fff;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  &:hover{
-    background: rgb(184, 37, 37);
-  }
-}
+$base-color: rgba(217, 223, 230, 0.2);
+$btn-color: #FCCF18;
+
+/* --- text colors --- */
+$text-color: #fff;
+$second-text-color: #233148;
+
+/* --- bg colors --- */
+$base-bg: #EAEFF5;
+$main-bg: #233148;
+$second-bg: #1F65D9;
+
+
+$font-proxima: 'proxima_novaregular';
+$font-proxima-italic: 'proxima_novaregular_italic';
+$font-proxima-light: 'proxima_novalight';
+$font-proxima-bl: 'proxima_novablack';
+$font-proxima-bold: 'proxima_novabold';
+$font-proxima-ebold: 'proxima_novaextrabold';

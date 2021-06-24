@@ -92,7 +92,7 @@ exports.server = server;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, server, watching);
+exports.default = parallel(styles, images, scripts, server, watching);
 
 
 
