@@ -1,6 +1,7 @@
 .service{
   background: $main-bg;
   position: relative;
+  overflow: hidden;
 }
 .service__container{
   padding: 179px 0 287px 0;
@@ -152,7 +153,8 @@
 
 
 .lightpaper{
-  background: $base-bg
+  background: $base-bg;
+  overflow: hidden;
 }
 .lightpaper__container{
   margin-top: -107px;
